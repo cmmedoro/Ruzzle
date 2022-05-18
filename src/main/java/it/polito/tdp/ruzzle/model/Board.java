@@ -15,7 +15,10 @@ import javafx.beans.property.StringProperty;
  */
 public class Board {
 	private List<Pos> positions;
-	private Map<Pos, StringProperty> cells;
+	private Map<Pos, StringProperty> cells; //matrice vera e propria; Pos = identifica posizione nella matrice
+											//StringProperty = classe che include una stringa ---> tramite binding, le posso associare
+											//a elementi dell'interfaccia grafica: cliccando sui bottoni della matrice, faccio un binding,
+											//il che mi evita di dover fare un setText ---> quando cambia il testo viene cambiato automaticamente
 
 	private int size;
 
@@ -74,7 +77,7 @@ public class Board {
 			String letter = Character.toString((char)('A'+random)) ;
 			
 			//grazie al "binding" fatto in FXMLController, la "set" modifica direttamente il testo del botone collegato alla posizione corrente
-			this.cells.get(p).set(letter); 
+			this.cells.get(p).set(letter);  //modifico l'interfaccia grafica
 		}
 	}
 	

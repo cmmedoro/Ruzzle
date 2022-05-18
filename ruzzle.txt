@@ -1,0 +1,34 @@
+Approccio 1: calcolo tutti i percorsi che posso avere sulla matrice e ad ogni passo, tengo traccia della soluzione parziale --> se trovo qualche
+			 parola di senso compiuto, che esista nel dizionario e che abbia almeno 2 lettere, la salvo.
+			 
+Approccio 2: prima parte iterativa ---> scorro tutte le parole presenti nel dizionario: se sono in grado di dire se c'è o meno nella matrice, 
+			 ho risolto il gioco; parto carattere per carattere e vedo se riusciamo a costruire un percorso per la parola che stiamo cercando.
+			 
+INPUT PROBLEMA:
+	1- parola da riconoscere 'parola'
+	2- contenuto della Board
+	3- se c'è o meno la prima lettere della parola, e qual è la sua posizione
+
+SOLUZIONE PARZIALE:
+	1- Stringa che rappresenta la parte della parola che ho già riconosciuto.
+	2- Eventualmente, posso tenermi traccia delle posizioni dei caratteri della parola per illuminare la parola sull'interfaccia grafica
+
+SOLUZIONE COMPLETA:
+	1- La parola riconosciuta per intero
+	2- Elenco delle sue posizioni sulla Board	
+	
+LIVELLO:
+	1- Numero di caratteri riconosciuti/ parziale.size()
+	
+CONDIZIONI DI TERMINAZIONE:
+	1- Livello == parola.length() ---> quella da riconoscere
+	Se viene trovata 'parola' stoppo la ricorsione.
+	
+AVVIO RICORSIONE:
+	1- livello = 1 ---> trovo manualmente la prima lettera
+	Parto dalla posizione della prima lettera, se questa c'è
+	
+STRUTTURE DATI:
+	1- parziale = String
+	2- livello = int
+	3- List<Pos> = percorso parziale
